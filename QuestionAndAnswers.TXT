@@ -97,4 +97,7 @@ A) Throws clause is used to declare an exception, which means it works similar t
 Throw keyword is used in the method body to throw an exception, while throws is used in method signature to declare the exceptions 
 that can occur in the statements present in the method.
 
-5)
+6) Method to get the page title?
+A) driver.getTitle();
+
+7)

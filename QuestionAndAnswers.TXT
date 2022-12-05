@@ -120,3 +120,14 @@ A) Page Object Model (POM) is a design pattern used in test automation which cre
 Under this model, for each web page in the application, there should be a corresponding Page Class.
  This Page class will identify the WebElements of that web page and also contains Page methods which perform operations on those WebElements.
  Name of these methods must be given as per the task they are performing.
+
+9)Difference between submit and click in selenium?
+A)The click() and submit() functions are similar in terms of functionalities.some differences between them are
+
+The submit() function is applicable only for <form> and makes handling of form easier. It can be used with any element inside a form. 
+The click() is only applicable to buttons with type submit in a form.
+
+The submit() function will wait for the page to load but the click() waits only if any explicit wait condition is provided. 
+If a form has a submit of type button, the submit() method cannot be used. Also, if a button is outside <form>, then submit() will not work.
+
+Thus we see that click() works for both type buttons irrespective of the fact that the button is inside or outside of <form>.

@@ -1,9 +1,26 @@
 1. Difference between Abstraction and Interface?
 A. Abstaction:
-Abstraction is the methodology of hiding the implementation of internal details and showing the functionality to the users.
-In Page Object Model design pattern, we write locators (such as id, name, xpath etc.,) and the methods in a Page Class.
-We utilize these locators in tests but we can’t see the implementation of the methods. 
-Literally we hide the implementations of the locators from the tests.
+Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user.
+Abstract Class:
+We can create the Abstract class by using Abstract keyword before the class name. 
+An abstract class can have both Abstract methods and Non-abstract methods that are a concrete class.
+Abstract method:
+The method which has only the declaration and not the implementation is called the abstract method and it has the keyword called abstract. 
+Declarations ends with a semicolon.
+
+Interface:
+Multiple inheritance cannot be achieved in java. To overcome this problem Interface concept is introduced.
+An interface is a template which has only method declarations and not the method implementation.
+An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. 
+It is used to achieve abstraction and multiple inheritance in Java.
+Interface cannot be instantiated.
+There are mainly three reasons to use interface. They are given below.
+It is used to achieve abstraction.
+By interface, we can support the functionality of multiple inheritance.
+It can be used to achieve loose coupling.
+Examples of interfaces in selenium are webdriver, TakeScreenShot, JavaScriptExecutor, WebElement.
+
 Inheritance:
 Inheritance in Java is a mechanism in which one object acquires all the properties (methods and fields) and behaviors of a parent object.
 When we inherit from an existing class, you can reuse methods and fields of the parent class. 
@@ -25,3 +42,52 @@ Purpose of Encapsulation:
 All the classes in a framework are an example of Encapsulation. In POM classes, we declare the data members using @FindBy and 
 initialization of data members will be done using Constructor to utilize those in methods.
 
+3.Explain about synchronization in selenium?
+A)Synchronization has a very vital role to play in automation. 
+Code execution and application need to be in sync to perform the operation. 
+If the application slows down for any reasons like network, heavy load, etc  then the code keeps on checking for the particular web element. 
+If the code doesn't able to find that element it fails, by throwing exceptions like NoSuchElement, ElementNotVisible, etc.
+
+so, it is our responsibility to maintain the synchronization during automation.
+ In Selenium WebDriver, Synchronization can be divided into 2 types:
+
+1.Unconditional
+
+2.Conditional
+
+1.Unconditional Synchronization 
+
+This type of synchronization comes from Java language where we just specify the timeout limit. 
+It pauses the code for particular time specified and then it starts to execute the next line of code.
+
+wait();
+
+thread.sleep();
+
+As a parameter, we have to pass the timeout value. Values are default to milliseconds. 
+For example, if want to wait for 10 seconds , we need to pass value as thread.sleep(10000). 
+Unconditional synchronization is not advisable to use for automation as it just waits for the specified time even if it has found the web element.
+
+2.Conditional Synchronization  
+
+In conditional synchronization, conditions will be set along with the timeout limit. 
+Code will wait for the specified time declared until the expected condition gets satisfied, then it executes the next line of code.
+
+It is divided into 2 types:
+
+
+i) Implicit wait
+
+ii)Explicit wait
+
+i)Implicit Wait - The Implicit Wait in Selenium is used to tell the web driver to wait for a certain amount of time before it throws a “No Such Element Exception”. 
+The default setting is 0. Once we set the time, the web driver will wait for the element for that time before throwing an exception.
+
+Syntax ->  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ii)Explicit Wait-
+The Explicit Wait in Selenium is used to tell the Web Driver to wait for Expected Conditions or maximum time exceeded before throwing “ElementNotVisibleException” 
+exception. It can be applied only for specified elements.It is recommended to use when the elements are taking long time to load and also for verifying 
+the property of the element like(visibilityOfElementLocated, elementToBeClickable,elementToBeSelected). 
+Syntax -> WebDriverWait wait = new WebDriverWait(driver,10)
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath()).click();
+Explicit wait is used to wait for particular Web element, whereas Implicit wait will be used to wait for whole Web Elements in the driver instance.

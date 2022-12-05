@@ -91,3 +91,10 @@ the property of the element like(visibilityOfElementLocated, elementToBeClickabl
 Syntax -> WebDriverWait wait = new WebDriverWait(driver,10)
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath()).click();
 Explicit wait is used to wait for particular Web element, whereas Implicit wait will be used to wait for whole Web Elements in the driver instance.
+
+4) Difference between throw and throws?
+A) Throws clause is used to declare an exception, which means it works similar to the try-catch block. 
+Throw keyword is used in the method body to throw an exception, while throws is used in method signature to declare the exceptions 
+that can occur in the statements present in the method.
+
+5)

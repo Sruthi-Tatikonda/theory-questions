@@ -1,0 +1,16 @@
+1. Difference between Abstraction and Interface?
+A. 
+Abstaction:
+Abstraction is the methodology of hiding the implementation of internal details and showing the functionality to the users.
+In Page Object Model design pattern, we write locators (such as id, name, xpath etc.,) and the methods in a Page Class.
+We utilize these locators in tests but we can’t see the implementation of the methods. 
+Literally we hide the implementations of the locators from the tests.
+Inheritance:
+Inheritance in Java is a mechanism in which one object acquires all the properties (methods and fields) and behaviors of a parent object.
+When we inherit from an existing class, you can reuse methods and fields of the parent class. 
+Moreover, you can add new methods and fields in your current class also.
+Uses of Inheritance:
+For Method Overriding (so runtime polymorphism can be achieved).
+For Code Reusability.
+Existing class is known as Super class whereas the derived class is known as a sub class.
+Inheritance is applicable for public and protected members only. Private members can’t be inherited.

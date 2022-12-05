@@ -100,4 +100,18 @@ that can occur in the statements present in the method.
 6) Method to get the page title?
 A) driver.getTitle();
 
-7)
+7)How to handle multiple windows on browser?
+A) A window handle is a unique identifier that holds the address of all the windows.
+ It is a pointer to a window, which returns the string value. This window handle function helps to grt the handles of all the windows
+ and each browser will have a unique window handle.
+ 		Set<String> s = driver.getWindowHandles();
+		Iterator<String> i = s.iterator();
+		String parent = i.next();
+		String child = i.next();
+		System.out.println(driver.getTitle());
+		driver.switchTo().window(child);
+		System.out.println(driver.getTitle());
+		driver.close();
+		driver.switchTo().window(parent);
+
+

@@ -114,4 +114,9 @@ A) A window handle is a unique identifier that holds the address of all the wind
 		driver.close();
 		driver.switchTo().window(parent);
 
-
+8)Explain about page object model in selenium?
+A) Page Object Model (POM) is a design pattern used in test automation which creates Object Repository for web elements.
+ The advantage of the model is that it reduces code duplication and improves test maintenance.
+Under this model, for each web page in the application, there should be a corresponding Page Class.
+ This Page class will identify the WebElements of that web page and also contains Page methods which perform operations on those WebElements.
+ Name of these methods must be given as per the task they are performing.
